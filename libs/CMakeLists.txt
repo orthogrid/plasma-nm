@@ -37,6 +37,11 @@ if (WITH_MODEMMANAGER_SUPPORT)
 endif()
 
 install(TARGETS plasmanm_internal ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/" # source directory
+        DESTINATION "include/plasma-nm" # target directory
+        FILES_MATCHING # install only matched files
+        PATTERN "*.h" # select header files
+)
 
 add_subdirectory(declarative)
 add_subdirectory(editor)
