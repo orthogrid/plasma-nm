@@ -71,6 +71,7 @@ Handler::Handler(QObject *parent)
     , m_tmpWirelessEnabled(NetworkManager::isWirelessEnabled())
     , m_tmpWwanEnabled(NetworkManager::isWwanEnabled())
 {
+  /*
     initKdedModule();
     QDBusConnection::sessionBus().connect(QStringLiteral(AGENT_SERVICE),
                                             QStringLiteral(AGENT_PATH),
@@ -83,6 +84,7 @@ Handler::Handler(QObject *parent)
                                             QStringLiteral(AGENT_IFACE),
                                             QStringLiteral("secretsError"),
                                             this, SLOT(secretAgentError(QString, QString)));
+                                            */
 }
 
 Handler::~Handler()

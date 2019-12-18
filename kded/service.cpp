@@ -62,6 +62,7 @@ NetworkManagementService::~NetworkManagementService()
 
 void NetworkManagementService::init()
 {
+  /*
     Q_D(NetworkManagementService);
 
     if (!d->agent) {
@@ -80,6 +81,7 @@ void NetworkManagementService::init()
     if (!d->portalMonitor) {
         d->portalMonitor = new PortalMonitor(this);
     }
+    */
 }
 
 void NetworkManagementService::slotRegistered(const QDBusObjectPath &path)
