@@ -110,6 +110,10 @@ PRIVATE
     qca-qt5
 )
 
+target_include_directories(plasmanm_editor INTERFACE
+  $<INSTALL_INTERFACE:include/plasma-nm/editor/widgets>
+)
+
 if (WITH_MODEMMANAGER_SUPPORT)
     target_link_libraries(plasmanm_editor PUBLIC KF5::ModemManagerQt)
 endif()
