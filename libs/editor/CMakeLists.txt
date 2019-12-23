@@ -110,9 +110,13 @@ target_link_libraries(plasmanm_editor
     KF5::KDELibs4Support
 )
 
+target_include_directories(plasmanm_editor INTERFACE
+    $<INSTALL_INTERFACE:include/plasma-nm/editor/widgets>
+)
+
 if (WITH_MODEMMANAGER_SUPPORT)
     target_link_libraries(plasmanm_editor KF5::ModemManagerQt)
 endif()
 
-install(TARGETS plasmanm_editor ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmanm_editor EXPORT plasmanmConfig ${INSTALL_TARGETS_DEFAULT_ARGS})
 install(FILES plasma-networkmanagement-vpnuiplugin.desktop DESTINATION ${SERVICETYPES_INSTALL_DIR})

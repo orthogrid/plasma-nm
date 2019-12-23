@@ -28,11 +28,28 @@ target_link_libraries(plasmanm_internal
     Qt5::Network
 )
 
+target_include_directories(plasmanm_internal INTERFACE
+  $<INSTALL_INTERFACE:include/plasma-nm>
+)
+
 if (WITH_MODEMMANAGER_SUPPORT)
     target_link_libraries(plasmanm_internal KF5::ModemManagerQt)
 endif()
 
-install(TARGETS plasmanm_internal ${INSTALL_TARGETS_DEFAULT_ARGS})
+install(TARGETS plasmanm_internal
+    EXPORT plasmanmConfig
+    ${INSTALL_TARGETS_DEFAULT_ARGS}
+)
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/" # source directory
+    DESTINATION "include/plasma-nm" # target directory
+    FILES_MATCHING # install only matched files
+    PATTERN "*.h" # select header files
+)
+
+export(EXPORT plasmanmConfig FILE plasmanmConfig.cmake)
+install(EXPORT plasmanmConfig
+    DESTINATION share/plasmanmConfig/cmake
+)
 
 add_subdirectory(declarative)
 add_subdirectory(editor)

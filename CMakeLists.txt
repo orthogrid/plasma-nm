@@ -74,6 +74,9 @@ add_definitions(-DQT_NO_URL_CAST_FROM_STRING)
 remove_definitions(-DQT_NO_CAST_FROM_ASCII -DQT_NO_CAST_FROM_BYTEARRAY)
 
 configure_file(config.h.cmake ${CMAKE_CURRENT_BINARY_DIR}/config.h )
+install(FILES ${CMAKE_CURRENT_BINARY_DIR}/config.h
+  DESTINATION "include/plasma-nm" # target directory
+)
 
 add_definitions(-DWITH_MODEMMANAGER_SUPPORT=${WITH_MODEMMANAGER_SUPPORT})
 
