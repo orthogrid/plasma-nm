@@ -22,6 +22,7 @@
 #include "uiutils.h"
 
 #include <QDBusConnection>
+#include <QDBusConnectionInterface>
 
 #include <NetworkManagerQt/ActiveConnection>
 #include <NetworkManagerQt/Connection>

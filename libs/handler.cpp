@@ -43,6 +43,7 @@
 
 #include <QDBusError>
 #include <QDBusPendingReply>
+#include <QDBusMetaType>
 #include <QIcon>
 
 #include <KNotification>

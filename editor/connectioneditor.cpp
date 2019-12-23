@@ -40,6 +40,7 @@
 #include <QAction>
 #include <QIcon>
 #include <QMenuBar>
+#include <QTimer>
 
 #include <KAcceleratorManager>
 #include <KActionCollection>
