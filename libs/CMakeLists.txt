@@ -51,5 +51,5 @@ install(EXPORT plasmanmConfig
     DESTINATION share/plasmanmConfig/cmake
 )
 
-add_subdirectory(declarative)
+#add_subdirectory(declarative)
 add_subdirectory(editor)

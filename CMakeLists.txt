@@ -38,11 +38,6 @@ find_package(KF5ModemManagerQt 5.14.0)
 set_package_properties(KF5ModemManagerQt PROPERTIES
                        TYPE OPTIONAL)
 
-# Required only for getting information about NetworkManager version in CMake
-find_package(NetworkManager 0.9.8.4)
-set_package_properties(NetworkManager PROPERTIES
-                       TYPE REQUIRED)
-
 find_package(MobileBroadbandProviderInfo)
 set_package_properties(MobileBroadbandProviderInfo PROPERTIES
                        DESCRIPTION "Database of mobile broadband service providers"
@@ -86,8 +81,7 @@ include_directories(${CMAKE_CURRENT_BINARY_DIR} # for config.h
 
 add_subdirectory(applet)
 add_subdirectory(editor)
-add_subdirectory(kded)
 add_subdirectory(libs)
-add_subdirectory(vpn)
+#add_subdirectory(vpn)
 
 feature_summary(WHAT ALL INCLUDE_QUIET_PACKAGES FATAL_ON_MISSING_REQUIRED_PACKAGES)
